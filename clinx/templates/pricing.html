@@ -1,0 +1,44 @@
+{% include 'head.html' %}
+<body>
+    {% include 'header.html' %}
+      <div class="marquee-container">
+        <div class="data-box">
+          <span>Market Cap: $100,000,000,000</span>
+        </div>
+        <div class="data-box">
+          <span>Greed: 60%</span>
+        </div>
+        <div class="data-box">
+          <span>Fear: 74%</span>
+        </div>
+      </div>
+      
+    <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Price(USD)</th>
+            <th>24h</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for coin in coins %}
+          <tr class="table-row">
+            <td class="data-cell">{{ coin.rank }}</td>
+            <td class="data-cell">{{ coin.name }}</td>
+            <td class="data-cell">{{ coin.priceUsd }}</td>
+            <td class="data-cell" style="color: {% if coin.changePercent24Hr > 0 %} green {% elif coin.changePercent24Hr < 0 %} red {% else %} black; {% endif %}">
+              {{ coin.changePercent24Hr }}%
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% include 'footer.html'%}
+    
+    
+      <script src="{{ url_for('static', filename='js/hamburger.js') }}"></script>
+</body>
+</html>

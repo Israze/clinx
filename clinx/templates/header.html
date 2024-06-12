@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <a href="/" class="logo-link">
+            <img src="static/images/clinx.png" alt="logo" height="57">
+          </a>
+        </div>
+      
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+      
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li><a href="{{ url_for('home')}}" class="nav-link">Home</a></li>
+            <li><a href="{{ url_for ('clinx_features')}}" class="nav-link">Features</a></li>
+            <li><a href="{{ url_for('get_coins') }}" class="nav-link">Prices</a></li>
+            <li><a href="#" class="disabled">New Listing</a></li>
+          </ul>
+        </nav>
+      
+        
+      
+        <div class="mobile-menu">
+          <ul class="nav-list">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">Features</a></li>
+            <li><a href="{{ url_for('get_coins') }}" class="nav-link">Prices</a></li>
+            <li><a href="#" class="nav-link">News</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+          </ul>
+          
+        </div>
+      </header>
+</body>
+</html>

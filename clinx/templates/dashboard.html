@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html'%}
+<body>
+    {%include 'layout.html'%}
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

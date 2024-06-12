@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'head.html' %}
+    <style>
+        /* General styles */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+
+.first-container {
+  width: 80%; /* Adjust container width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 2rem; /* Add some padding for container */
+  text-align: center; /* Center text within the container */
+  
+}
+
+.first-container h1 {
+  font-size: 2rem; /* Adjust heading size as needed */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add space after the heading */
+}
+
+.lead {
+  font-size: 1.25rem; /* Adjust paragraph size as needed */
+  line-height: 1.5; /* Adjust line spacing as needed */
+  margin-bottom: 1.5rem; /* Add space after the paragraph */
+}
+
+.container {
+  width: 80%; /* Adjust container width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 2rem; /* Add some padding for container */
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border-color: #007bff;
+  border-width: thick;
+}
+
+.row {
+  display: flex;
+  align-items: center; /* Keep elements vertically centered */
+}
+
+.image-column,
+.text-column {
+  flex: 1; /* Make columns flexible for better resizing */
+  padding: 1rem;
+}
+
+/* Image column styles */
+.image-column img {
+  max-width: 700px; /* Adjust image width if needed */
+  max-height: 500px; /* Adjust image height if needed */
+}
+
+/* Text column styles */
+.text-column h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.text-column p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+
+/* Responsive adjustments (for smaller screens) */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Stack elements on smaller screens */
+  }
+}
+.features-button-1{
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 90px;
+    background-color:#007bff ;border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.features-button-2{
+    font-size: 20px;
+    cursor: pointer;
+    color: #007bff;
+    margin-bottom: 90px;
+    background-color:white ;border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+.features-button-2 :hover{
+
+}
+.button-link{
+  text-decoration: none;
+  color: white;
+}
+
+.button-link-2{
+  text-decoration: none;
+  color: #007bff;
+}
+
+    </style>
+<body>
+    {% include 'header.html' %}
+    <div class="first-container">
+        <img src="static/images/clinx.png" alt="Logo"  height="63" style="display: block; margin: 0 auto; margin-bottom: 1rem;">
+        <h1>Stay Ahead of the Curve with live Crypto Updates.</h1>
+        <p class="lead">No more scrambling for outdated information. Our platform provides real-time market insights,
+             delivered straight to your dashboard, empowering you to stay informed and make informed decisions.
+              Take control of your crypto investments with real-time market insights at your fingertips.</p>
+        <div class="button-group">
+          <button class="features-button-1" type="button"><a class="button-link" href="{{url_for('get_coins')}}">View prices</a></button>
+        </div>
+      </div>
+      
+    <div class="container">
+        <div class="row">
+          <div class="image-column">
+            <img src="bootstrap-themes.png" alt="" width="700" height="500" loading="lazy">
+          </div>
+          <div class="text-column">
+            <h1>Get Timely Crypto Alerts - Never Miss a Trading Opportunity! </h1>
+            <p>Stay informed and react quickly to market changes with real-time crypto alerts delivered straight to your inbox.
+            Customize your alerts based on price targets, technical signals, or breaking news to make informed trading decisions.</p>
+            <div class="button-group">
+              <button class="features-button-2"><a class="button-link-2" href="">Set alert now</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include 'footer.html'%}    
+      
+</body>
+</html>

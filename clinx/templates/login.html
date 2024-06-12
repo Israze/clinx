@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="whole-form">
+        
+<form class="form" method="POST">
+  <h1>Sign In</h1>
+  {{ form.hidden_tag() }}
+
+
+  <div class="input-container">
+    {{ form.email.label }}
+    {{ form.email(size=30, placeholder="Enter email") }}
+    {% for error in form.email.errors %}
+      <span class="error">{{ error }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="input-container">
+    {{ form.password.label }}
+    {{ form.password(size=30, placeholder="Enter password") }}
+    {% for error in form.password.errors %}
+      <span class="error">{{ error }}</span>
+    {% endfor %}
+  </div>
+
+  
+    <input type="checkbox" id="remember_me" class="ui-checkbox" name="remember_me">
+    
+ 
+
+  <div class="form-group">
+    {{  form.submit(class="submit") }}  </div>
+
+  <p class="signup-link">
+    Dont have an account?
+    <a href="{{url_for('register')}}">Register</a>
+  </p>
+</form>
+
+{% if get_flashed_messages() %}
+  <ul class="flashes">
+    {% for message in get_flashed_messages() %}
+      <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+    </div>
+    
+
+ 
+</body>
+</html>

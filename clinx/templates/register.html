@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+
+  
+<body>
+  
+  <form method="POST" class="register-form">
+    <h1 class="register-title">Register</h1>
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.username.label }} {{ form.username(size=30) }}
+      {% for error in form.username.errors %}
+        <span class="error">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.email.label }} {{ form.email(size=30) }}
+      {% for error in form.email.errors %}
+        <span class="error">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.password.label }} {{ form.password(size=30) }}
+      {% for error in form.password.errors %}
+        <span class="error">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.confirm_password.label }} {{ form.confirm_password(size=30) }}
+      {% for error in form.confirm_password.errors %}
+        <span class="error">{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.submit }}
+    </div>
+  </form>
+  {% if get_flashed_messages() %}
+    <ul class="flashes">
+      {% for message in get_flashed_messages() %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
+
+    
+
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+     <script>
+         const emailInput = document.getElementById('email');
+         emailInput.addEventListener('focus', function() {
+           this.placeholder = '';
+         });
+       
+         emailInput.addEventListener('blur', function() {
+           if (this.value === '') {
+             this.placeholder = 'Enter Email';
+           }
+         });
+       </script>
+ </body>
+ </html>

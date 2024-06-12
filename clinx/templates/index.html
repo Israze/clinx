@@ -1,0 +1,77 @@
+{% include 'head.html' %}
+
+<style>
+    table {
+        width: 60%; 
+        border-collapse: collapse; 
+        margin: 0 auto; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        border-radius: 10px;
+
+  
+    }
+    th, td {
+        text-align: center; 
+        padding: 15px; 
+        border-radius: 10px;
+        
+    }
+    .table-row {
+    border-top: 1px solid #ddd;  
+}
+</style>
+<body>
+      {% include 'header.html' %}
+<section class="featurette">
+  <div class="featurette-container">
+    
+    <div class="featurette-text">
+      <h2>First-hand information... <span class="subheading">at your fingertips</span></h2>
+      <p class="featurette-content">Navigate the ever-evolving world of cryptocurrency with confidence. We provide real-time market data, and educational resources to empower your crypto journey..</p>
+    </div>
+    <div class="featurette-image">
+      <img class="img-fluid" src="static/images/tablet.jpg" height="500" width="600"  alt="Placeholder image" style="border-radius: 10px;">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<table> 
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Price(USD)</th>
+      <th>24h</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for coin in coins %}
+    <tr class="table-row">
+      <td>{{ coin.rank }}</td>
+      <td>{{ coin.name }}</td>
+      <td>{{ coin.priceUsd }}</td>
+      <td class="data-cell" style="color: {% if coin.changePercent24Hr > 0 %} #2E8B57 {% elif coin.changePercent24Hr < 0 %} #FA8072 {% else %} black; {% endif %}">
+        {{ coin.changePercent24Hr }}%
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>    
+
+<div class="show-more-container">
+  <a href="{{ url_for('get_coins')}}">Show More</a>
+
+  {% include 'footer.html'%}
+</div>
+
+
+</body>
+</html>
+<script src="{{ url_for('static', filename='js/hamburger.js') }}"></script>
+<script src="assets/js/carousel.js"></script>
+</body>
+</html>

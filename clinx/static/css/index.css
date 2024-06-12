@@ -1,0 +1,587 @@
+body {
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+  .header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex; /* Make header a flex container */
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .logo {
+    float: left; /* Float logo to the left */
+    margin-right: 150px; /* Add margin to separate from menu */
+    margin-left: 20px;
+    
+  }
+  
+  .navbar {
+    flex: 1; /* Allow navbar to fill remaining space */
+  }
+  
+  .logo-link {
+    display: block;
+    font-size: 30PX;
+    margin-left: 0;
+    text-decoration: none;
+    color: black;
+    
+  }
+
+  .logo-link.C{
+    color: black;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 32px;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    padding: 0 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+  }
+  
+  .disabled{
+    padding: 0 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #a29d9d;
+    position: relative; 
+    pointer-events: none;
+  }
+
+  
+  
+  .nav-link::before {
+    content: "";  
+    position: absolute;  
+    left: 5px;  
+    bottom: -5px;  
+    width: 0;  
+    height: 2.5px;  
+    background-color: #007bff;  
+    transition: width 0.3s ease;  
+  }
+  
+  .nav-link:hover::before {
+    width: 85%;  
+  }
+
+  
+  .user-section {
+    text-align: right;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-login {
+    background-color: white;
+    border-color: #007bff;
+    font-weight: bold;
+    border-radius: 20px;
+    color: #007bff;
+  }
+  
+  .anchor_login{
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .anchor_register{
+    text-decoration: none;
+    color: white;
+  }
+
+  
+  .btn-signup {
+    background-color: #007bff;
+    font-weight: bold;
+    border-radius: 20px;
+    color: #fff;
+  }
+
+
+.btn-login:hover{
+    transition: 1s ease;
+    
+    background-color: #007bff;
+    .anchor_login{
+      color: white;
+    }
+
+}
+
+
+
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.mobile-menu.active{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.mobile-buttons {
+  flex-direction: column;
+  margin-top: 20px;
+  
+}
+
+
+.mobile-menu.active .nav-list{
+  flex-direction: column;
+}
+.mobile-menu.active .mobile-buttons {
+  flex-direction: column;
+  
+}
+
+.mobile-menu.active .btn-login{
+  margin-bottom: 10px;
+
+}
+
+
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: blue;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    .mobile-menu.active {
+      display: none; 
+    }
+  }
+
+  .user-section {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+  }
+
+  .hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .menu-toggle:checked + .mobile-menu{
+    display: flex;
+    
+  }
+
+  .menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
+    transition: 1s ease;
+    transform: rotate(45deg) translateY( 11px);
+  }
+
+  .menu-toggle:checked + .hamburger-menu .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked + .hamburger-menu .bar:nth-child(3) {
+    transition: 1s ease;
+    transform: rotate(-45deg) translateY(-11px);
+  }
+}
+
+.featurette {
+  /* Styles for the entire section (optional) */
+  padding: 20px; /* Add some padding (optional) */
+}
+
+.featurette-container {
+  display: flex;
+  overflow: hidden; /* Prevent float issues */
+  margin-top: 20px;
+  margin-bottom:35px ;
+  
+}
+
+.featurette-image {
+  float: left; /* Make image float left */
+   /* Set fixed width for image */
+  margin: 0 20px 20px 0; 
+  
+  
+  
+}
+
+
+.featurette-text {
+  width: 50%;
+  margin-right: 60px;
+  font-size: 40px; /* Adjust heading size as needed */
+  margin-bottom: 15px; /* Add some space below heading */
+}
+
+.subheading {
+  font-weight: lighter; /* Lighter weight for subheading */
+  color: #007bff; /* Adjust subheading color */
+}
+
+.featurette-content {
+  font-size: 20px; /* Adjust paragraph size */
+}
+
+.featurette-text {
+  /* Optional styles for the text */
+}
+
+/* Media Queries for Responsive Behavior (optional) */
+
+@media (max-width: 768px) {
+  .featurette-image,
+  .featurette-text {
+    float: none; /* Clear floats on smaller screens */
+    width: 100%; /* Make elements full width */
+    text-align: center; /* Center elements vertically */
+  }
+}
+@media (max-width: 768px) {
+  .featurette-container {
+    display: block;
+    overflow: hidden; /* Prevent float issues */
+  
+  }
+  
+}
+
+.page-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #007bff;
+  margin: 2rem 0;
+}
+
+
+table {
+  width: 100%; /* Makes the table responsive */
+  border-collapse: collapse; /* Removes borders between cells */
+  margin: 0 auto; /* Centers the table horizontally */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+  border-radius: 10px;
+}
+th, td {
+  text-align: center; /* Centers content within cells */
+  padding: 10px; /* Creates even spacing between cells */
+  border-radius: 10px;
+  
+}
+
+/* .table-row{
+  border-radius: 20px;
+  background-color: chartreuse;
+} */
+
+.data-cell {
+  color: inherit; /* Inherit color from parent element */
+}
+
+.data-cell.positive {
+  color: green;
+}
+
+.data-cell.negative {
+  color: red;
+}
+
+
+
+.show-more-container {
+  text-align: center;
+  margin-top: 1rem;  /* Add some margin above the link */
+}
+
+.show-more-container a {
+  /* Style the "Show More" link as desired (color, font, etc.) */
+  padding: 5px 10px; /* Add padding to the link text */
+  border: 1px solid #ddd; /* Add a border */
+
+  color: #007bff;
+  border-radius: 5px; /* Add rounded corners */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.show-more-container a:hover {
+  background-color: #eee; /* Change background color on hover */
+}
+
+.marquee-container {
+  display: flex; /* Arrange boxes horizontally */
+  justify-content: space-between; /* Distribute boxes evenly */
+  width: 100%; /* Match container width to parent */
+  background-color: #007bff; /* Light background for subtle separation */
+  border-radius: 5px; /* Rounded corners for container */
+  padding: 10px; /* Add padding for content within container */
+}
+
+.data-box {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: marquee 5s linear infinite; /* Animation properties */
+  color: #fff; /* Adjust text color for light theme */
+  font-family: monospace; /* Monospace font */
+  font-size: 1.1rem; /* Adjust font size */
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  padding: 5px 10px;
+  animation-fill-mode: forwards; /* Adjust padding for content within box */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+/* sign in styling */
+/* Center the form horizontally and vertically */
+.form {
+  position: absolute;  /* Make element positionable */
+  top: 50%;  /* Vertical center: 50% of viewport height */
+  left: 50%;  /* Horizontal center: 50% of viewport width */
+  transform: translate(-50%, -50%);  /* Offset to center within viewport */
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  padding-right: 40px;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.whole-form{
+  
+}
+
+
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+.input-container {
+  position: relative;
+  margin-right: 10px ;
+}
+
+.input-container input, .form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+  margin-right: 10px ;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-right: 10px ;
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+.signup-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+/* checkbox settings 👇 */
+
+.ui-checkbox {
+  --primary-color: #1677ff;
+  --secondary-color: #fff;
+  --primary-hover-color: #4096ff;
+  /* checkbox */
+  --checkbox-diameter: 20px;
+  --checkbox-border-radius: 5px;
+  --checkbox-border-color: #d9d9d9;
+  --checkbox-border-width: 1px;
+  --checkbox-border-style: solid;
+  /* checkmark */
+  --checkmark-size: 1.2;
+}
+
+.ui-checkbox, 
+.ui-checkbox *, 
+.ui-checkbox *::before, 
+.ui-checkbox *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--checkbox-diameter);
+  height: var(--checkbox-diameter);
+  border-radius: var(--checkbox-border-radius);
+  background: var(--secondary-color);
+  border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.ui-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+  box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+  border-radius: inherit;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  -o-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+
+.ui-checkbox::before {
+  top: 40%;
+  left: 50%;
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+  -o-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+}
+
+/* actions */
+
+.ui-checkbox:hover {
+  border-color: var(--primary-color);
+}
+
+.ui-checkbox:checked {
+  background: var(--primary-color);
+  border-color: transparent;
+}
+
+.ui-checkbox:checked::before {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  -o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+
+.ui-checkbox:active:not(:checked)::after {
+  -webkit-transition: none;
+  -o-transition: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: none;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
